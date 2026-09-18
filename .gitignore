@@ -1,0 +1,67 @@
+# ==========================================
+# HE-05: Evidence-Linked Patient Journey
+# Git Ignore Configuration
+# ==========================================
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+*.bak
+patient_journey.db
+backend/patient_journey.db
+
+# User uploads & runtime storage
+backend/uploads/*
+!backend/uploads/.gitkeep
+uploads/
+
+# Python compiled files & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python virtual environments
+.venv/
+venv/
+ENV/
+backend/.venv/
+backend/venv/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node & Frontend dependencies & builds
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+dist-ssr/
+*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE, OS & Editor artifacts
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+Thumbs.db

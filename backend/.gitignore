@@ -1,0 +1,24 @@
+# Backend Git Ignore Configuration
+.env
+.env.*
+!.env.example
+
+# Local SQLite Database
+*.db
+*.sqlite
+*.sqlite3
+patient_journey.db
+
+# User uploads (protect clinical documents)
+uploads/*
+!uploads/.gitkeep
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# Virtual environments
+.venv/
+venv/
