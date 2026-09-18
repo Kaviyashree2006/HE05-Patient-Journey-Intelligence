@@ -38,9 +38,9 @@ export async function getDocument(documentId) {
   return fetchJson(`${BASE_URL}/documents/${documentId}`);
 }
 export function getDocumentDownloadUrl(documentId) {
-  const base = import.meta.env.VITE_API_BASE_URL || '';
-  return `${base}/api/documents/${documentId}/file`;
+  return `${BASE_URL}/documents/${documentId}/file`;
 }
+export const getDocumentViewUrl = getDocumentDownloadUrl;
 export async function uploadDocuments(patientId, files) {
   const formData = new FormData();
   for (const file of files) formData.append('files', file);
