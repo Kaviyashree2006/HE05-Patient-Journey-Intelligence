@@ -3,11 +3,9 @@ import {
   FileText, 
   UploadCloud, 
   CheckCircle2, 
-  Clock, 
   Download, 
   RefreshCw, 
   Plus,
-  ExternalLink,
   BookOpen,
   Activity,
   Pill,
@@ -15,14 +13,12 @@ import {
   Scan,
   LogOut,
   ShieldCheck,
-  Search,
   Eye
 } from 'lucide-react';
 import ProcessingPipeline from './ProcessingPipeline';
 import EvidenceQA from './EvidenceQA';
 import {
   uploadDocuments,
-  processDocument,
   getDocumentDownloadUrl,
   getDocumentViewUrl
 } from '../services/api';
@@ -36,7 +32,6 @@ export default function DocumentsEvidenceView({
   const [selectedDocId, setSelectedDocId] = useState(documents?.[0]?.document_id || null);
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [isUploading, setIsUploading] = useState(false);
-  const [processingDocId, setProcessingDocId] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
   const fileInputRef = useRef(null);
 
@@ -132,8 +127,8 @@ export default function DocumentsEvidenceView({
         <div className="repository-corpus-content animate-fade-in">
           {/* Connected Intelligence Pipeline Bar */}
           <ProcessingPipeline 
-            isProcessing={isUploading || !!processingDocId}
-            currentStage={isUploading ? 'uploading' : (processingDocId ? 'event_extraction' : 'completed')}
+            isProcessing={isUploading}
+            currentStage={isUploading ? 'uploading' : 'completed'}
           />
 
           {/* Upload Dropzone Strip */}
