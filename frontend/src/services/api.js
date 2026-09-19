@@ -1,6 +1,4 @@
 const BASE_URL = (import.meta.env.VITE_API_URL || '/api').replace(/\/$/, '');
-const BASE_URL = (import.meta.env.VITE_API_URL || '/api').replace(/\/$/, '');
->>>>>>> b42c148 (Fix frontend deployment configuration)
 
 export async function fetchJson(url, options = {}) {
   const res = await fetch(url, options);
